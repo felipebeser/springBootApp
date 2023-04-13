@@ -23,4 +23,8 @@ public class ProfessorService {
 	public Professor atualizar(Professor professor) {
 		return professorRepository.save(professor);
 	}
+	
+	public void excluir(Integer id) {
+		professorRepository.deleteById(id);
+	}
 }

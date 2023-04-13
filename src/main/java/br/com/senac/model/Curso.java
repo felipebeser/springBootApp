@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Curso {
@@ -12,6 +13,9 @@ public class Curso {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
+	
+	@OneToOne(mappedBy = "curso")
+	private Professor professor;
 	
 	public int getId() {
 		return id;

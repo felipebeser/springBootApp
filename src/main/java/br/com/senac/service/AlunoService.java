@@ -24,5 +24,9 @@ public class AlunoService {
 	public Aluno atualizar(Aluno aluno) {
 		return alunoRepository.save(aluno);
 	}
+	
+	public void excluir(Integer id) {
+		alunoRepository.deleteById(id);
+	}
 
 }

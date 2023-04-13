@@ -8,13 +8,17 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import br.com.senac.model.Aluno;
+import br.com.senac.model.Curso;
 import br.com.senac.service.AlunoService;
+import br.com.senac.service.CursoService;
 
 @Component
 public class Init implements ApplicationListener<ContextRefreshedEvent>{
 
 	@Autowired
 	AlunoService alunoService;
+	@Autowired
+	CursoService cursoService;
 	
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -35,7 +39,12 @@ public class Init implements ApplicationListener<ContextRefreshedEvent>{
 		for(Aluno aluno : alunos) {
 			System.out.println(aluno.getNome());
 		}
-			
 		
+		Curso curso1 = new Curso();
+		curso1.setNome("Java");
+		cursoService.salvar(curso1);
+		Curso curso2 = new Curso();
+		curso2.setNome("Python");	
+		cursoService.salvar(curso2);
 	}
 }

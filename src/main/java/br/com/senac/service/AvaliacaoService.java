@@ -11,7 +11,7 @@ import br.com.senac.repository.AvaliacaoRepository;
 @Service
 public class AvaliacaoService {
 	@Autowired
-	private AvaliacaoRepository avaliacaoRepository;
+	AvaliacaoRepository avaliacaoRepository;
 	
 	public List<Avaliacao> buscarTodasAvaliacoes(){
 		return avaliacaoRepository.findAll();

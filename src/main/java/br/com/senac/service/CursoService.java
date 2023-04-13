@@ -23,4 +23,8 @@ public class CursoService {
 	public Curso atualizar(Curso curso) {
 		return cursoRepository.save(curso);
 	}
+
+	public void excluir(Integer id) {
+		cursoRepository.deleteById(id);
+	}
 }
