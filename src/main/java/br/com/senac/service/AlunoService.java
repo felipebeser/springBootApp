@@ -17,6 +17,10 @@ public class AlunoService {
 		return alunoRepository.findAll();
 	}
 	
+	public Aluno buscarPorId(Integer id) {
+		return alunoRepository.findById(id).get();
+	}
+	
 	public Aluno salvar(Aluno aluno) {
 		return alunoRepository.save(aluno);
 	}

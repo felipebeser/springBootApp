@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.senac.model.AlunoCurso;
 import br.com.senac.model.Avaliacao;
 import br.com.senac.repository.AvaliacaoRepository;
 
@@ -23,5 +24,9 @@ public class AvaliacaoService {
 	
 	public Avaliacao atualizar(Avaliacao avaliacao) {
 		return avaliacaoRepository.save(avaliacao);
+	}
+	
+	public void excluir(AlunoCurso alunocurso) {
+		avaliacaoRepository.deleteById(alunocurso);
 	}
 }

@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 import br.com.senac.model.Professor;
-import br.com.senac.service.CursoService;
 import br.com.senac.service.ProfessorService;
 
 @RequestMapping("professor")
@@ -18,8 +17,6 @@ import br.com.senac.service.ProfessorService;
 public class ProfessorController {
 	@Autowired
 	private ProfessorService professorService;
-	@Autowired
-	private CursoService cursoService;
 	
 	@GetMapping("/listarProfessores")
 	public ModelAndView listarTodosProfessores() {
@@ -32,7 +29,6 @@ public class ProfessorController {
 	public ModelAndView cadastrarProfessor() {
 		ModelAndView mv = new ModelAndView("professor/cadastraProfessor");
 		mv.addObject("professor", new Professor());
-		mv.addObject("cursos", cursoService.buscarTodosCursos());
 		return mv;
 	}
 	
